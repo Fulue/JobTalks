@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+::-webkit-scrollbar {
+    @apply w-2 h-2.5;
+
+}
+
+::-webkit-scrollbar-track {
+    @apply bg-transparent
+}
+
+::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-content3 border-[1px] border-transparent border-solid bg-clip-padding;
+}
+
+.text-answer {
+    @apply text-default-500 leading-8 space-y-2;
+}
+
+.text-answer strong {
+    @apply text-default-700;
+}
+
+.text-answer ul {
+    @apply list-disc pl-4 ml-4 space-y-2 ;
+}
+
+.text-answer ul li::marker {
+    @apply text-default-700;
+}
+
+.text-answer li {
+    @apply text-default-500 leading-6;
+}
+
+.text-answer ol {
+    @apply list-decimal pl-6 space-y-2;
+}
+
+.text-answer ol li::marker {
+    @apply font-bold text-default-700;
+}
+
+.text-answer code {
+    @apply font-normal text-xs bg-content4 rounded-lg py-1 px-1.5 text-default-700 whitespace-nowrap;
+}
+
+.text-answer h3 {
+    @apply text-lg font-extrabold text-default-700;
+}
+
+.text-answer h4 {
+    @apply font-extrabold text-default-700;
+}
+
+.text-answer table {
+    @apply min-w-full table-auto border-collapse mt-6 mb-6 border border-default-300;
+}
+
+.text-answer th, .text-answer td {
+    @apply px-4 py-2 text-left border-b border-default-300;
+}
+
+.text-answer thead {
+    @apply bg-content4 font-extrabold text-default-800;
+}
+
+.text-answer tbody{
+    @apply font-semibold text-default-500 bg-content2/70;
+}
+
+.text-answer tbody strong {
+    @apply font-bold text-default-700;
+}
+
+.text-answer td {
+    @apply text-default-500;
+}
+
+.text-answer caption {
+    @apply text-lg font-semibold text-default-700 mb-2;
+}
+
+@layer base {
+  :root {
+
+
+
+        --radius: 0.5rem
+
+    }
+
+}
+
