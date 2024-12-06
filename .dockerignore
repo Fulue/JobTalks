@@ -1,14 +1,17 @@
+/deploy/docker-compose.yml
+/deploy/Dockerfile
 /.phpunit.cache
 /node_modules
 /public/build
 /public/hot
 /public/storage
+/public/bucket
 /storage/*.key
 /vendor
 .env
+.env.example
 .env.backup
 .env.production
-.phpactor.json
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml
@@ -18,5 +21,4 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
-/.zed
-.DS_Store
+.git

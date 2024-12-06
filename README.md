@@ -76,5 +76,10 @@
    ```bash
    docker-compose up --build
    ```
+   
+2. Установка зависимостей:
+   ```bash
+   docker exec -it job-talks-php sh -c "composer install && php artisan key:generate && npm install && npm run build"
+   ```
 
    После этого проект будет доступен по адресу [http://localhost:8000](http://localhost:8000).
