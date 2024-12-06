@@ -24,7 +24,8 @@ use Illuminate\Database\Eloquent\Relations\MorphToMany;
  * @property Tag[]|MorphToMany $tags
  * @property Profession $profession
  * @property Level $level
- * @property View[]|HasMany $views
+ * @property View[]|MorphMany $views
+ * @property Like[]|MorphMany $likes
  */
 class Question extends Model
 {
@@ -92,6 +93,16 @@ class Question extends Model
     public function views(): MorphMany
     {
         return $this->morphMany(View::class, 'viewable');
+    }
+
+    /**
+     * Определяет связь вопроса с лайками (полиморфная связь один ко многим).
+     *
+     * @return MorphMany
+     */
+    public function likes(): MorphMany
+    {
+        return $this->morphMany(Like::class, 'likeable');
     }
 
 }

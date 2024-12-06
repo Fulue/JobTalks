@@ -21,10 +21,6 @@ class ViewService
             return;
         }
 
-        View::query()->create([
-            'viewable_id' => $question->id,
-            'viewable_type' => Question::class,
-            'ip_address' => $ipAddress,
-        ]);
+        $question->views()->create(['ip_address' => $ipAddress]);
     }
 }

@@ -15,9 +15,7 @@ class LikeService
 
         $reactionType = $request->input('reaction'); // "like" или "dislike"
 
-        $like = Like::query()->firstOrCreate([
-            'likeable_id' => $question->id,
-            'likeable_type' => Question::class,
+        $like = $question->likes()->firstOrCreate([
             'ip_address' => $request->ip(),
         ], [
             'reaction_type' => $reactionType,
@@ -27,9 +25,8 @@ class LikeService
             $like->update([
                 'reaction_type' => $reactionType
             ]);
-            return response()->json(['result' => true, 'reaction' => $like->reaction_type]);
         }
 
-        return response()->json(['result' => true, 'reaction' => $reactionType]);
+        return response()->json(['result' => true]);
     }
 }
