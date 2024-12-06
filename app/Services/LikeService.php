@@ -9,14 +9,14 @@ use Illuminate\Http\Request;
 
 class LikeService
 {
-    public function handleReaction(Request $request, $questionId): JsonResponse
+    public function handleReaction(string $reaction, string $ipAddress, $questionId): JsonResponse
     {
         $question = Question::query()->findOrFail($questionId);
 
-        $reactionType = $request->input('reaction'); // "like" или "dislike"
+        $reactionType = $reaction; // "like" или "dislike"
 
         $like = $question->likes()->firstOrCreate([
-            'ip_address' => $request->ip(),
+            'ip_address' => $ipAddress,
         ], [
             'reaction_type' => $reactionType,
         ]);
