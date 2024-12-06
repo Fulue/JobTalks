@@ -25,7 +25,7 @@ class QuestionDetailsController extends Controller
 
         $question = Question::query()->findOrFail($questionId);
 
-        $viewService->addView($request, $question);
+        $viewService->addView($request->ip(), $question);
 
         return Inertia::render('question-details', [
             'question' => QuestionAnswersDTO::fromModel($question),

@@ -8,10 +8,8 @@ use Illuminate\Http\Request;
 
 class ViewService
 {
-    public function addView(Request $request, Question $question): void
+    public function addView(string $ipAddress, Question $question): void
     {
-        $ipAddress = $request->ip(); // Получаем IP адрес пользователя
-
         $existingView = View::query()->where('viewable_id', $question->id)
             ->where('viewable_type', Question::class)
             ->where('ip_address', $ipAddress)

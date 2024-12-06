@@ -25,7 +25,7 @@ class ProfessionQuestionsController extends Controller
             return response()->json(['error' => $validator->errors()->first()], 400);
         }
 
-        return $likeService->handleReaction($request, $questionId);
+        return $likeService->handleReaction($request->input('reaction'), $request->ip(), $questionId);
     }
 
     public function index(string $professionId, QuestionService $questionService, TagService $tagService): Response
@@ -38,7 +38,7 @@ class ProfessionQuestionsController extends Controller
             abort(404, 'Профессия не найдена.');
         }
 
-        $profession = Profession::query()->findOrFail($professionId);
+        $profession = Profession::query()->find($professionId);
 
         return Inertia::render('questions', [
             'questions' => Inertia::defer(fn () => $questionService->getQuestions($profession)),
