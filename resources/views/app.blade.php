@@ -11,6 +11,7 @@
         <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="{{ asset('favicon.ico') }}">
         <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
