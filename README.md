@@ -6,7 +6,7 @@
 
 1. Клонируйте репозиторий:
    ```bash
-   git clone https://github.com/your-username/JobTalks.git
+   git clone https://github.com/Fulue/JobTalks.git
    cd JobTalks
    ```
 
