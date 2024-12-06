@@ -33,29 +33,24 @@ RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
 RUN node -v
 RUN npm -v
 
+# Устанавливаем рабочую директорию
+WORKDIR /var/www/html
+
 # Копируем файлы приложения
-COPY . /var/www/html/
+COPY . .
+RUN chown -R www-data:www-data /var/www/html \
+    && chmod -R 775 /var/www/html/storage \
+    && chmod -R 775 /var/www/html/bootstrap/cache
 
 # Копируем php.ini
 COPY docker/php/php.ini /usr/local/etc/php/conf.d/
-
-# Устанавливаем рабочую директорию
-WORKDIR /var/www/html
 
 # Удаляем старые зависимости
 RUN rm -rf node_modules package-lock.json vendor composer.lock
 
 # Устанавливаем зависимости Composer
-RUN composer install --no-interaction --prefer-dist --optimize-autoloader --no-dev
-
-# Генерируем ключ приложения
-RUN php artisan key:generate
-
-# Собираем ассеты
-RUN npm install
-RUN npm run build
-
-# Устанавливаем права на директории
-RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
+#RUN composer install --no-interaction --prefer-dist --optimize-autoloader --no-dev \
+#  && npm install \
+#  && npm run build
 
 ENTRYPOINT ["php-fpm"]
