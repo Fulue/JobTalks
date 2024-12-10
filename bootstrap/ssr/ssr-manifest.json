@@ -1,0 +1,68 @@
+{
+  "resources/js/Layouts/layout.tsx": [
+    "/build/assets/logo-ZJN5M-eU.svg"
+  ],
+  "resources/js/components/craft.tsx": [
+    "/build/assets/logo-ZJN5M-eU.svg"
+  ],
+  "resources/js/components/question-text.tsx": [
+    "/build/assets/logo-ZJN5M-eU.svg"
+  ],
+  "resources/js/components/theme/theme-provider.tsx": [
+    "/build/assets/logo-ZJN5M-eU.svg"
+  ],
+  "resources/js/components/theme/theme-toggle.tsx": [
+    "/build/assets/logo-ZJN5M-eU.svg"
+  ],
+  "resources/js/components/ui/word-rotate.tsx": [
+    "/build/assets/logo-ZJN5M-eU.svg"
+  ],
+  "resources/js/config/icons.config.tsx": [
+    "/build/assets/logo-ZJN5M-eU.svg"
+  ],
+  "resources/js/lib/icon/Java.tsx": [
+    "/build/assets/logo-ZJN5M-eU.svg"
+  ],
+  "resources/js/lib/icon/Javascript.tsx": [
+    "/build/assets/logo-ZJN5M-eU.svg"
+  ],
+  "resources/js/lib/icon/Kubernetes.tsx": [
+    "/build/assets/logo-ZJN5M-eU.svg"
+  ],
+  "resources/js/lib/icon/PHP.tsx": [
+    "/build/assets/logo-ZJN5M-eU.svg"
+  ],
+  "resources/js/lib/icon/Python.tsx": [
+    "/build/assets/logo-ZJN5M-eU.svg"
+  ],
+  "resources/js/lib/icon/Qa.tsx": [
+    "/build/assets/logo-ZJN5M-eU.svg"
+  ],
+  "resources/js/lib/utils.ts": [
+    "/build/assets/logo-ZJN5M-eU.svg"
+  ],
+  "resources/js/logo.svg": [
+    "/build/assets/logo-ZJN5M-eU.svg"
+  ],
+  "resources/js/pages/home.tsx": [
+    "/build/assets/logo-ZJN5M-eU.svg"
+  ],
+  "resources/js/pages/question-details.tsx": [
+    "/build/assets/logo-ZJN5M-eU.svg"
+  ],
+  "resources/js/pages/questions.tsx": [
+    "/build/assets/logo-ZJN5M-eU.svg"
+  ],
+  "resources/js/pages/questions/question-card.tsx": [
+    "/build/assets/logo-ZJN5M-eU.svg"
+  ],
+  "resources/js/pages/questions/search-filter.tsx": [
+    "/build/assets/logo-ZJN5M-eU.svg"
+  ],
+  "resources/js/ssr.tsx": [
+    "/build/assets/logo-ZJN5M-eU.svg"
+  ],
+  "resources/js/utils/scroll-manager.ts": [
+    "/build/assets/logo-ZJN5M-eU.svg"
+  ]
+}
