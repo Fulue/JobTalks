@@ -6,14 +6,14 @@ import Balancer from "react-wrap-balancer";
 import { Deferred, Head, router } from "@inertiajs/react";
 import iconComponents from "@/config/icons.config";
 import { useDebouncedCallback } from "use-debounce";
-import { Pagination } from "@nextui-org/react";
+import { Button, Pagination } from "@nextui-org/react";
 import type { Selection } from "@nextui-org/react";
 import SearchFilter from "@/pages/questions/search-filter";
 import {
     QuestionCard,
     QuestionCardSkeleton,
 } from "@/pages/questions/question-card";
-import { Code } from "lucide-react";
+import { ArrowLeft, Code } from "lucide-react";
 import {
     restoreScrollPosition,
     saveScrollPosition,
@@ -157,9 +157,21 @@ const Content = ({ questions, profession, tags }: QuestionsProps) => {
                 ) : (
                     <Code size={65} />
                 )}
-                <h3 className="scroll-m-20 text-xl font-extrabold lg:text-4xl">
-                    <Balancer>{profession.profession} - Вопросы</Balancer>
-                </h3>
+                <div className="flex items-center gap-1">
+                    <Button
+                        size="sm"
+                        onClick={() => history.back()}
+                        isIconOnly
+                        color="default"
+                        variant="light"
+                        aria-label="Назад"
+                    >
+                        <ArrowLeft size={16} />
+                    </Button>
+                    <h3 className="scroll-m-20 text-base font-extrabold lg:text-4xl ">
+                        <Balancer>{profession.profession} - Вопросы</Balancer>
+                    </h3>
+                </div>
                 <p className="text-sm text-default-500">
                     Список вопросов для вашей профессии
                 </p>
@@ -212,7 +224,7 @@ const Content = ({ questions, profession, tags }: QuestionsProps) => {
 
                     <div className="flex justify-center">
                         <Pagination
-                            size="lg"
+                            size="md"
                             showControls
                             total={lastPage}
                             initialPage={currentPage}

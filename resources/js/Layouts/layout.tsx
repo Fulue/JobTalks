@@ -47,12 +47,16 @@ const Nav = (props: NavbarProps) => {
             onMenuOpenChange={setIsMenuOpen}
         >
             <NavbarBrand>
-                <Image
-                    src={Logo}
-                    className="size-6 dark:invert"
-                    radius="none"
-                />
-                <span className="ml-2 text-small font-medium">JobTalks</span>
+                <NextLink as={Link} href="/">
+                    <Image
+                        src={Logo}
+                        className="size-6 dark:invert"
+                        radius="none"
+                    />
+                    <span className="ml-2 text-small font-medium text-default-900">
+                        JobTalks
+                    </span>
+                </NextLink>
             </NavbarBrand>
 
             <NavbarContent justify="center">
@@ -72,13 +76,15 @@ const Nav = (props: NavbarProps) => {
 
             <NavbarContent className="hidden md:flex" justify="end">
                 <NavbarItem className="ml-2 !flex gap-2">
-                    <Button
-                        startContent={<Github size={16} />}
-                        color="default"
-                        variant="ghost"
-                    >
-                        GitHub
-                    </Button>
+                    <a href="https://github.com/Fulue/JobTalks" target="_blank">
+                        <Button
+                            startContent={<Github size={16} />}
+                            color="default"
+                            variant="ghost"
+                        >
+                            GitHub
+                        </Button>
+                    </a>
                 </NavbarItem>
             </NavbarContent>
 
@@ -90,7 +96,7 @@ const Nav = (props: NavbarProps) => {
                         <NextLink
                             as={Link}
                             className="mb-2 w-full text-default-500"
-                            href="#"
+                            href="/"
                             size="md"
                         >
                             {item}
@@ -131,14 +137,20 @@ const Footer = () => {
                     <div className="xl:grid xl:grid-cols-2 xl:gap-8 items-center">
                         <div className="space-y-8 md:pr-8">
                             <div className="flex items-center gap-3 justify-start">
-                                <Image
-                                    src={Logo}
-                                    className="size-9 dark:invert"
-                                    radius="none"
-                                />
-                                <span className="text-medium font-medium">
-                                    JobTalks
-                                </span>
+                                <NextLink
+                                    as={Link}
+                                    href="/"
+                                    className="gap-1.5"
+                                >
+                                    <Image
+                                        src={Logo}
+                                        className="size-9 dark:invert"
+                                        radius="none"
+                                    />
+                                    <span className="text-medium font-medium text-default-900">
+                                        JobTalks
+                                    </span>
+                                </NextLink>
                             </div>
                             <p className="text-small text-default-500">
                                 Сервис с вопросами и ответами для подготовки к
